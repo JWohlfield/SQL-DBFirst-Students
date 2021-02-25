@@ -1,0 +1,40 @@
+﻿@model List<Student>
+
+@foreach (Student s in Model)
+{
+    <h4>Id: @s.Id...Name: @s.FirstName @s.LastName</h4>
+    @*<h3>Residence: @s.HomeCity, @s.HomeState</h3>
+    <h3>Favorite Food: @s.FavoriteFood</h3>*@
+    @*<br />*@
+
+<a asp-action="Delete" asp-controller="Student" asp-route-id="@s.Id">
+    <button>Delete @s.FirstName @s.LastName</button>
+</a>
+
+<a asp-action="Update" asp-controller="Student" asp-route-id="@s.Id">
+    <button>Edit @s.FirstName @s.LastName</button>
+</a>
+
+}
+    <br />
+    <h5>Find out more about your classmates by Id</h5>
+    <form asp-action="Search" asp-controller="Student">
+        @{
+            int i = 1;
+            foreach (Student s in Model)
+            {
+                <label>--Id: @s.Id</label>
+                <input type="radio" name="StudentId" value="@s.Id" />
+                if (i % 10 == 0)
+                {
+                    <br />
+                }
+
+                i++;
+            }
+        }
+        <br />
+        <input class="button1" type="submit" />
+    </form>
+
+<a asp-action="Create" asp-controller="Student">Add a Student to the database</a>

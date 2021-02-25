@@ -1,0 +1,30 @@
+﻿@model Student
+
+<form>
+    <label>Id: @Model.Id</label>
+    <br />
+
+    <input type="text" name="FirstName" value="@Model.FirstName" required/>
+    <label>- First Name</label>
+    <br />
+
+    <input type="text" name="LastName" value="@Model.LastName" required/>
+    <label>- Last Name</label>
+    <br />
+
+    <input type="text" name="HomeCity" value="@Model.HomeCity" required/>
+    <label>- City</label>
+    <br />
+
+    <input type="text" name="HomeState" value="@Model.HomeCity" required/>
+    <label>- State</label>
+    <br />
+
+    <input type="text" name="FavoriteFood" value="@Model.FavoriteFood" required/>
+    <label>- Favorite Food</label>
+    <br />
+    <br />
+
+    <input type="submit" value="Update" />
+
+</form>
